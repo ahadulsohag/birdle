@@ -14,7 +14,8 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Tile('A', HitType.hit), // NEW
+          child: Tile('b', HitType.partial), // NEW
+          
         ),
       ),
     );
@@ -40,6 +41,12 @@ class Tile extends StatelessWidget {
           HitType.miss => Colors.grey,
            _ => Colors.white,
         }
+      ),
+      child: Center(
+        child: Text(
+          letter.toUpperCase(),
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ),
     );
   }
