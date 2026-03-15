@@ -10,31 +10,28 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(
-          child: Tile('b', HitType.partial), // NEW
+        appBar: AppBar(
+          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
         ),
+        body: Center(child: GamePage()),
       ),
     );
   }
 }
 
-class Tile extends StatelessWidget {
-  const Tile(this.letter, this.hitType, {super.key});
-
-  final String letter;
-  final HitType hitType;
-
+class GamePage extends StatelessWidget {
+  GamePage({super.key});
+  final Game _game = Game();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Align(alignment: Alignment.centerLeft, child: Text('Birdle')),
-        ),
-        body: Center(child: Text('Hello World!')),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(spacing: 5.0, children: [
+          
+        ],
       ),
     );
   }
